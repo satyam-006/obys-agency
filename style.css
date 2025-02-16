@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @font-face {
     font-family: "plain light";
     src: url('./assets/fonts/plain-light-webfont.ttf');
@@ -21,7 +28,8 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     font-family: "plain light";
     color: #fff;
 }
@@ -42,7 +50,9 @@ body::-webkit-scrollbar {
     height: 30px;
     background-color: #fff;
     mix-blend-mode: difference;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
 }
 
 #loader {
@@ -57,8 +67,14 @@ body::-webkit-scrollbar {
 }
 
 .line {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     gap: 3vw;
     overflow: hidden;
@@ -77,15 +93,25 @@ body::-webkit-scrollbar {
     font-weight: 600;
     letter-spacing: 3px;
     opacity: 0;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
 }
 
 #line-part1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     gap: 1.2vw;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     margin-top: 10px;
     margin-left: 80px;
@@ -101,6 +127,40 @@ body::-webkit-scrollbar {
 #line-part1 h5 {
     width: 5vw;
     text-align: right;
+}
+
+@-webkit-keyframes loaderAnime {
+    0% {
+        font-family: "plain light";
+        -webkit-text-stroke: 1px #fff;
+        color: #fff;
+        font-weight: 500;
+        opacity: 1;
+    }
+
+    48% {
+        font-family: "plain light";
+        -webkit-text-stroke: 1px #fff;
+        color: #fff;
+        font-weight: 500;
+        opacity: 0;
+    }
+
+    50% {
+        font-family: "silk serif";
+        -webkit-text-stroke: 1px #fff;
+        color: transparent;
+        font-weight: 500;
+        opacity: 1;
+    }
+
+    100% {
+        font-family: "silk serif";
+        -webkit-text-stroke: 1px #fff;
+        color: transparent;
+        font-weight: 500;
+        opacity: 0;
+    }
 }
 
 @keyframes loaderAnime {
@@ -157,30 +217,50 @@ body::-webkit-scrollbar {
     top: 0;
     left: 0;
     opacity: 0;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     z-index: 999;
 
 }
 
 #nav {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding: 4vw 5vw;
 }
 
 #nav-part1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     gap: 3vw;
 }
 
 #nav-part2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     gap: 3vw;
 }
 
@@ -193,6 +273,8 @@ body::-webkit-scrollbar {
 .hero {
     width: 72vw;
     margin-left: 27%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     position: relative;
 }
@@ -224,11 +306,15 @@ body::-webkit-scrollbar {
 
 #hero3 {
     z-index: 9999;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
 }
 
 #hero3 h1 {
     margin-bottom: 1.5vw;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
 }
 
@@ -241,6 +327,8 @@ body::-webkit-scrollbar {
 #hero3 #h2:hover {
     -webkit-text-stroke: 1px #fff;
     color: transparent;
+    -webkit-transition: all ease .3s;
+    -o-transition: all ease .3s;
     transition: all ease .3s;
     font-weight: 100;
     border-bottom: .6vw solid #ffffff00;
@@ -276,14 +364,16 @@ body::-webkit-scrollbar {
 #video-container video {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     opacity: 0;
 }
 
 #video-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
@@ -298,9 +388,15 @@ body::-webkit-scrollbar {
     border-radius: 50%;
     top: -5.5vw;
     right: 12vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 #playbtn i {
@@ -374,6 +470,8 @@ body::-webkit-scrollbar {
 
 .text-div {
     width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     margin: 3vw 0;
     position: relative;
@@ -383,6 +481,8 @@ body::-webkit-scrollbar {
 .text-div h2 {
     font-size: 2.5vw;
     text-transform: uppercase;
+    -webkit-transition: all ease .5s;
+    -o-transition: all ease .5s;
     transition: all ease .5s;
 }
 
@@ -393,16 +493,22 @@ body::-webkit-scrollbar {
 }
 
 .text-div h2:nth-child(2) {
-    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+            transform: translateY(100%);
 }
 
 
 .inside-container:hover .text-div h2:nth-child(2) {
-    transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+            transform: translateY(0%);
 }
 
 .inside-container:hover .text-div h2:nth-child(1) {
-    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+            transform: translateY(-100%);
 }
 
 
@@ -525,6 +631,7 @@ body::-webkit-scrollbar {
     scale: 0;
     -webkit-transition: all ease 0.5s;
     -o-transition: all ease 0.4s;
+    -webkit-transition: all ease 0.4s;
     transition: all ease 0.4s;
     -webkit-transition-delay: 0.3s;
     -o-transition-delay: 0.3s;
@@ -596,9 +703,15 @@ body::-webkit-scrollbar {
 #gola-container {
     width: 100%;
     height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 #gola {
@@ -606,14 +719,24 @@ body::-webkit-scrollbar {
     height: 24vw;
     background-color: #FFA63D;
     border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-transition: all ease .3s;
+    -o-transition: all ease .3s;
     transition: all ease .3s;
 }
 
 #gola:hover {
     scale: .85;
+    -webkit-transition: all ease .3s;
+    -o-transition: all ease .3s;
     transition: all ease .3s;
 }
 
@@ -669,6 +792,8 @@ body::-webkit-scrollbar {
     width: 100%;
     height: 82vh;
     margin-top: 5vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: relative;
 }
@@ -676,7 +801,8 @@ body::-webkit-scrollbar {
 #img-txt-part img {
     height: 100%;
     width: 32vw;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 #img-txt-part p {
@@ -699,9 +825,15 @@ body::-webkit-scrollbar {
 .elem {
     width: 100%;
     height: 20%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     border-bottom: 1.5px solid #ffffff7e;
 }
 
@@ -735,6 +867,8 @@ body::-webkit-scrollbar {
     white-space: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
 }
 
@@ -750,10 +884,14 @@ body::-webkit-scrollbar {
     font-weight: 100;
     display: inline-block;
     margin-left: 16px;
-    animation-name: text-scroll;
-    animation-duration: 30s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    -webkit-animation-name: text-scroll;
+            animation-name: text-scroll;
+    -webkit-animation-duration: 30s;
+            animation-duration: 30s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
     line-height: 9vw;
 
 }
@@ -769,13 +907,27 @@ body::-webkit-scrollbar {
     animation-direction: reverse;
 }
 
-@keyframes text-scroll {
+@-webkit-keyframes text-scroll {
     from {
-        transform: translateX(0);
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
     }
 
     to {
-        transform: translateX(calc(-100% - 20px));
+        -webkit-transform: translateX(calc(-100% - 20px));
+                transform: translateX(calc(-100% - 20px));
+    }
+}
+
+@keyframes text-scroll {
+    from {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+    }
+
+    to {
+        -webkit-transform: translateX(calc(-100% - 20px));
+                transform: translateX(calc(-100% - 20px));
     }
 }
 
@@ -794,6 +946,8 @@ body::-webkit-scrollbar {
     font-size: 7.5vw;
     text-transform: uppercase;
     font-weight: 500;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     padding-top: 6vw;
     display: inline-block;
@@ -839,8 +993,12 @@ body::-webkit-scrollbar {
 
 #socials {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     gap: 6vw;
 }
 
@@ -874,7 +1032,11 @@ body::-webkit-scrollbar {
 }
 
 .foot-text-div {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     position: relative;
     overflow: hidden;
@@ -883,6 +1045,8 @@ body::-webkit-scrollbar {
 
 .foot-text-div h4 {
     font-size: 2vw;
+    -webkit-transition: all ease .5s;
+    -o-transition: all ease .5s;
     transition: all ease .5s;
 }
 
@@ -893,15 +1057,21 @@ body::-webkit-scrollbar {
 }
 
 .foot-text-div h4:nth-child(2) {
-    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+            transform: translateY(100%);
 }
 
 .foot-text-div:hover h4:nth-child(2) {
-    transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+            transform: translateY(0%);
 }
 
 .foot-text-div:hover h4:nth-child(1) {
-    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+            transform: translateY(-100%);
 }
 
 @media (max-width:600px) {
@@ -912,8 +1082,14 @@ body::-webkit-scrollbar {
     }
 
     .line {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: flex-start;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
         height: fit-content;
         gap: 3vw;
         overflow: hidden;
@@ -953,7 +1129,9 @@ body::-webkit-scrollbar {
 
     #nav-part1 {
         width: 100%;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
     }
 
     #nav-part1 svg:nth-child(2) {
@@ -966,6 +1144,8 @@ body::-webkit-scrollbar {
 
 
     .hero {
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
         width: fit-content;
         margin-left: 5.5vw;
     }
@@ -977,9 +1157,15 @@ body::-webkit-scrollbar {
     #hero1 {
         width: 60vw;
         height: 17vw;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: flex-end;
-        justify-content: flex-end;
+        -webkit-box-align: end;
+            -ms-flex-align: end;
+                align-items: flex-end;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
         left: -10vw;
 
         &::before {
@@ -996,6 +1182,8 @@ body::-webkit-scrollbar {
 
     #hero3 h1 {
         margin-bottom: 2vw;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
         width: fit-content;
     }
 
@@ -1050,14 +1238,21 @@ body::-webkit-scrollbar {
 
     #image-div-container {
         padding: 3.5vw;
-        justify-content: center;
-        flex-direction: column;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         gap: 5vw;
 
     }
 
     .inside-container {
         width: 100%;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
         height: fit-content;
         padding: 0;
     }
@@ -1188,8 +1383,13 @@ body::-webkit-scrollbar {
         width: 100%;
         min-height: 70vh;
         margin-top: 8vw;
-        justify-content: flex-end;
-        flex-direction: column-reverse;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;
 
     }
 
@@ -1296,10 +1496,15 @@ body::-webkit-scrollbar {
 
     #socials {
         margin-top: 4vw;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
         width: fit-content;
         margin-left: 6vw;
         gap: 0;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
 
     .box {
